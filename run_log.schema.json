@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MateriVerse run log",
+  "type": "object",
+  "required": ["variant", "seed", "wall_clock_hours", "candidates"],
+  "properties": {
+    "variant": {"type": "string"},
+    "seed": {"type": "integer"},
+    "wall_clock_hours": {"type": "number", "exclusiveMinimum": 0},
+    "_synthetic": {"type": "boolean", "description": "True for generated test fixtures; such logs are watermarked in all outputs."},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "valid", "e_hull_mev_per_atom", "dft_cpu_hours"],
+        "properties": {
+          "id": {"type": "string"},
+          "valid": {"type": "boolean"},
+          "e_hull_mev_per_atom": {"type": "number"},
+          "dft_cpu_hours": {"type": "number", "minimum": 0},
+          "target_space_group": {"type": "integer"},
+          "generated_space_group": {"type": "integer"},
+          "predicted_tc_k": {"type": "number"}
+        }
+      }
+    },
+    "test_predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string"},
+          "tc_pred_k": {"type": "number"},
+          "tc_ref_k": {"type": "number"},
+          "stable_score": {"type": "number"},
+          "stable_label": {"type": "integer", "enum": [0, 1]}
+        }
+      }
+    }
+  }
+}
