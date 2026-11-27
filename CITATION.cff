@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying article."
+title: "MateriVerse evaluation toolkit"
+type: software
+authors:
+  - family-names: "Al-Janabi"
+    given-names: "Samaher"
+    affiliation: "Department of Computer Science, Faculty of Science for Women (SCIW), University of Babylon"
+  - family-names: "Al-Janabi"
+    given-names: "Noora"
+    affiliation: "Department of Computer Science, Faculty of Science for Women (SCIW), University of Babylon"
+version: 0.1.0
+license: MIT
